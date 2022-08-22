@@ -30,6 +30,11 @@
     //var COCKPITAPIURL="https://phpstack-676167-2221902.cloudwaysapps.com/cockpit/api/"
     var COCKPITAPIURL = "https://cp2.feeed.com/cockpit-core/api/"
     var COCKPITTOKEN = "API-5d68fdce4797f108f759f56c765dde7b03ce13e3"
+
+    document.body.addEventListener('htmx:configRequest', function(evt) {
+        alert(evt.detail.parameters);
+        //evt.detail.parameters['auth_token'] = getAuthToken(); // add a new parameter into the mix
+    });
   </script>
 
 
@@ -66,7 +71,7 @@
   </nav>
 
 
-  <section class="page-section clearfix"></section>
+  <section class="page-section clearfix" hx-get="/content/item/TermsAndConditions1" hx-trigger="load"></section>
 
   <section class="page-section cta"></section>
 
@@ -84,6 +89,18 @@
   <script src="js/scripts.js"></script>
   <!-- Font Awesome icons (free version)-->
   <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" crossorigin="anonymous"></script>
+
+  <script>
+    //var COCKPITAPIURL="https://phpstack-676167-2221902.cloudwaysapps.com/cockpit/api/"
+    var COCKPITAPIURL = "https://cp2.feeed.com/cockpit-core/api"
+    var COCKPITTOKEN = "API-5d68fdce4797f108f759f56c765dde7b03ce13e3"
+
+    document.body.addEventListener('htmx:configRequest', function(evt) {
+        //alert(evt.detail.path);
+        evt.detail.path = COCKPITAPIURL+evt.detail.path
+        evt.detail.headers['api-key'] = COCKPITTOKEN;
+    });
+  </script>
 
 </body>
 
