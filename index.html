@@ -28,8 +28,9 @@
 
   <script>
     //var COCKPITAPIURL="https://phpstack-676167-2221902.cloudwaysapps.com/cockpit/api/"
-    var COCKPITAPIURL = "https://cp2.feeed.com/cockpit-core/api/"
-    var COCKPITTOKEN = "API-5d68fdce4797f108f759f56c765dde7b03ce13e3"
+    var COCKPITAPIURL = "https://cp2.feeed.com/cockpit-core/api/";
+    //var COCKPITTOKEN = "API-5d68fdce4797f108f759f56c765dde7b03ce13e3";
+    var COCKPITTOKEN = "USR-7d349ef9839e7d86f052205eb77fea61ae8a2b1a";
 
     document.body.addEventListener('htmx:configRequest', function(evt) {
         alert(evt.detail.parameters);
@@ -73,7 +74,7 @@
 
   <section class="page-section clearfix" hx-get="/content/item/TermsAndConditions1" hx-trigger="load"></section>
 
-  <section class="page-section cta"></section>
+  <section class="page-section cta" hx-get="https://cp2.feeed.com/test.html"  hx-trigger="load"></section>
 
   <footer class="footer text-faded text-center py-5">
     <div class="container">
@@ -97,8 +98,11 @@
 
     document.body.addEventListener('htmx:configRequest', function(evt) {
         //alert(evt.detail.path);
-        evt.detail.path = COCKPITAPIURL+evt.detail.path
+        if (!evt.detail.path.startsWith('http')) {
+            evt.detail.path = COCKPITAPIURL+evt.detail.path
+        }
         evt.detail.headers['api-key'] = COCKPITTOKEN;
+        evt.detail.headers['Cockpit-Token'] = COCKPITTOKEN;
     });
   </script>
 
