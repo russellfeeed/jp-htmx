@@ -26,20 +26,6 @@
   <script src="https://unpkg.com/htmx.org@1.8.0" integrity="sha384-cZuAZ+ZbwkNRnrKi05G/fjBX+azI9DNOkNYysZ0I/X5ZFgsmMiBXgDZof30F5ofc" crossorigin="anonymous"></script>
 
 
-  <script>
-    //var COCKPITAPIURL="https://phpstack-676167-2221902.cloudwaysapps.com/cockpit/api/"
-    var COCKPITAPIURL = "https://cp2.feeed.com/cockpit-core/api/";
-    //var COCKPITTOKEN = "API-5d68fdce4797f108f759f56c765dde7b03ce13e3";
-    var COCKPITTOKEN = "USR-7d349ef9839e7d86f052205eb77fea61ae8a2b1a";
-
-    document.body.addEventListener('htmx:configRequest', function(evt) {
-        alert(evt.detail.parameters);
-        //evt.detail.parameters['auth_token'] = getAuthToken(); // add a new parameter into the mix
-    });
-  </script>
-
-
-
 
 </head>
 
@@ -94,7 +80,9 @@
   <script>
     //var COCKPITAPIURL="https://phpstack-676167-2221902.cloudwaysapps.com/cockpit/api/"
     var COCKPITAPIURL = "https://cp2.feeed.com/cockpit-core/api"
-    var COCKPITTOKEN = "API-5d68fdce4797f108f759f56c765dde7b03ce13e3"
+    //var COCKPITTOKEN = "API-5d68fdce4797f108f759f56c765dde7b03ce13e3"
+    var COCKPITTOKEN = "USR-7d349ef9839e7d86f052205eb77fea61ae8a2b1a";
+
 
     document.body.addEventListener('htmx:configRequest', function(evt) {
         //alert(evt.detail.path);
