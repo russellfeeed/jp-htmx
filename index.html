@@ -1,67 +1,70 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Jersey Post is the the island of Jersey&#39;s trusted letter and parcel delivery service. We  provide postal services 6 days a week across Jersey, to the Channel Islands and worldwide.">
+    <meta property="og:image" content="https://www.jerseypost.com/public/img/icons/icon558.png" />
 
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <meta name="description" content="" />
-  <meta name="author" content="" />
-  <title>XXX2</title>
-  <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-  <!-- Google fonts-->
-  <link
-    href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
-    rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet" />
-  <!-- Core theme CSS (includes Bootstrap)-->
-  <link href="css/styles.css" rel="stylesheet" />
-  <link href="css/localstyles.css" rel="stylesheet" />
+    <link rel="shortcut icon" type="image/ico" href="https://www.jerseypost.com/favicon.ico" />
 
-  <!-- ggghddxyhh -->
+    <link rel="apple-touch-icon" href="https://www.jerseypost.com/public/img/icons/icon120.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="https://www.jerseypost.com/public/img/icons/icon152.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="https://www.jerseypost.com/public/img/icons/icon167.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://www.jerseypost.com/public/img/icons/icon180.png">
 
-  <!--<script src="hs/behaviors._hs" type="text/hyperscript"></script>-->
-  <!-- load behaviors from a cockpit region as we can't use File: protocol here -->
-  <!--<script src="https://cp2.feeed.com/cockpit-core/api/regions/get/hs-behaviors?token=12891d01ee1336173f75d82800172f" type="text/hyperscript"></script>-->
-  <script src="https://unpkg.com/hyperscript.org@0.9.5"></script>
-
-  <script src="https://unpkg.com/htmx.org@1.8.0" integrity="sha384-cZuAZ+ZbwkNRnrKi05G/fjBX+azI9DNOkNYysZ0I/X5ZFgsmMiBXgDZof30F5ofc" crossorigin="anonymous"></script>
-
-  <script src="https://unpkg.com/htmx.org/dist/ext/client-side-templates.js"></script>
-  <script src="https://unpkg.com/mustache@latest"></script>
-
-</head>
-
-<body>
-  <header>
-    <div class="alert alert-success" role="alert" id="general-alert" _="on load hide me">
-      A simple success alert—check it out!
-    </div>
-
-    <h1 class="site-heading text-center text-faded d-none d-lg-block">
-      <span class="site-heading-upper text-primary mb-3"></span>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" media="all" />
 
 
-      <span class="site-heading-lower"></span>
-    </h1>
+    <title>Jersey Post - Jersey Post</title>
 
-  </header>
-  <!-- Navigation-->
-  <nav class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav">
-    <div class="container">
-        <img class="jp-navbar-logo" src="https://www.jerseypost.com/public/img/jpukraine.svg" alt="Jersey Post Logo">
-      <a class="navbar-brand text-uppercase fw-bold d-lg-none" href="index.html">Start Bootstrap</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span
-          class="navbar-toggler-icon"></span></button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mx-auto">
+    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">  </head>
+    <link rel="stylesheet" href="css/styles.css">  </head>
+
+    <script src="https://use.typekit.net/fxa4bhw.js"></script>
+    <style type="text/css">
+      @font-face{font-family:tk-adelle-n4;src:url(https://use.typekit.net/af/19af50/00000000000000003b9af920/27/l?subset_id=2&fvd=n4&v=3) format("woff2"),url(https://use.typekit.net/af/19af50/00000000000000003b9af920/27/d?subset_id=2&fvd=n4&v=3) format("woff"),url(https://use.typekit.net/af/19af50/00000000000000003b9af920/27/a?subset_id=2&fvd=n4&v=3) format("opentype");font-weight:400;font-style:normal;font-stretch:normal;font-display:auto;}@font-face{font-family:tk-adelle-n6;src:url(https://use.typekit.net/af/01fb88/00000000000000003b9af921/27/l?subset_id=2&fvd=n6&v=3) format("woff2"),url(https://use.typekit.net/af/01fb88/00000000000000003b9af921/27/d?subset_id=2&fvd=n6&v=3) format("woff"),url(https://use.typekit.net/af/01fb88/00000000000000003b9af921/27/a?subset_id=2&fvd=n6&v=3) format("opentype");font-weight:600;font-style:normal;font-stretch:normal;font-display:auto;}@font-face{font-family:tk-adelle-n3;src:url(https://use.typekit.net/af/611bb7/00000000000000003b9af91e/27/l?subset_id=2&fvd=n3&v=3) format("woff2"),url(https://use.typekit.net/af/611bb7/00000000000000003b9af91e/27/d?subset_id=2&fvd=n3&v=3) format("woff"),url(https://use.typekit.net/af/611bb7/00000000000000003b9af91e/27/a?subset_id=2&fvd=n3&v=3) format("opentype");font-weight:300;font-style:normal;font-stretch:normal;font-display:auto;}@font-face{font-family:tk-canada-type-gibson-i4;src:url(https://use.typekit.net/af/8b8b4f/00000000000000003b9b0ba6/27/l?subset_id=2&fvd=i4&v=3) format("woff2"),url(https://use.typekit.net/af/8b8b4f/00000000000000003b9b0ba6/27/d?subset_id=2&fvd=i4&v=3) format("woff"),url(https://use.typekit.net/af/8b8b4f/00000000000000003b9b0ba6/27/a?subset_id=2&fvd=i4&v=3) format("opentype");font-weight:400;font-style:italic;font-stretch:normal;font-display:auto;}@font-face{font-family:tk-canada-type-gibson-n3;src:url(https://use.typekit.net/af/b01614/00000000000000003b9b0ba4/27/l?subset_id=2&fvd=n3&v=3) format("woff2"),url(https://use.typekit.net/af/b01614/00000000000000003b9b0ba4/27/d?subset_id=2&fvd=n3&v=3) format("woff"),url(https://use.typekit.net/af/b01614/00000000000000003b9b0ba4/27/a?subset_id=2&fvd=n3&v=3) format("opentype");font-weight:300;font-style:normal;font-stretch:normal;font-display:auto;}@font-face{font-family:tk-canada-type-gibson-n4;src:url(https://use.typekit.net/af/299bdc/00000000000000003b9b0ba5/27/l?subset_id=2&fvd=n4&v=3) format("woff2"),url(https://use.typekit.net/af/299bdc/00000000000000003b9b0ba5/27/d?subset_id=2&fvd=n4&v=3) format("woff"),url(https://use.typekit.net/af/299bdc/00000000000000003b9b0ba5/27/a?subset_id=2&fvd=n4&v=3) format("opentype");font-weight:400;font-style:normal;font-stretch:normal;font-display:auto;}@font-face{font-family:tk-canada-type-gibson-n6;src:url(https://use.typekit.net/af/795dd6/00000000000000003b9b0ba8/27/l?subset_id=2&fvd=n6&v=3) format("woff2"),url(https://use.typekit.net/af/795dd6/00000000000000003b9b0ba8/27/d?subset_id=2&fvd=n6&v=3) format("woff"),url(https://use.typekit.net/af/795dd6/00000000000000003b9b0ba8/27/a?subset_id=2&fvd=n6&v=3) format("opentype");font-weight:600;font-style:normal;font-stretch:normal;font-display:auto;}@font-face{font-family:tk-canada-type-gibson-i6;src:url(https://use.typekit.net/af/45681f/00000000000000003b9b0ba7/27/l?subset_id=2&fvd=i6&v=3) format("woff2"),url(https://use.typekit.net/af/45681f/00000000000000003b9b0ba7/27/d?subset_id=2&fvd=i6&v=3) format("woff"),url(https://use.typekit.net/af/45681f/00000000000000003b9b0ba7/27/a?subset_id=2&fvd=i6&v=3) format("opentype");font-weight:600;font-style:italic;font-stretch:normal;font-display:auto;}
+    </style>
+
+<script>
+  //global vars
+  var jp = {
+      fontLoadState: 1,
+      scrollToLoadSelector: ''
+  };
+
+  try {
+      Typekit.load({
+          active: function () {
+              jp.fontLoadState = 2;
+          },
+          inactive: function () {
+              jp.fontLoadState = 3;
+          },
+          async: true
+      });
+  } catch (e) { }
+</script>
+  <body>
+
+    <main class="container">
+      <nav>
+        <ul>
+          <li>
+            <a href="#">
+    
+              <img class="jp-navbar-logo" src="https://www.jerseypost.com/public/img/jpukraine.svg" alt="Jersey Post Logo" >            
+            </a>
+          </li>
         </ul>
-      </div>
-    </div>
-  </nav>
-
-
-  <section class="page-section clearfix" 
+        <!--<ul>
+          <li><a href="#">Link</a></li>
+          <li><a href="#">Link</a></li>
+          <li><a href="#" role="button">Button</a></li>
+        </ul>-->
+      </nav>
+  
+      <div class="jp-content"
             hx-get="/content/item/TermsAndConditions1" 
             hx-trigger="load"
             hx-ext="client-side-templates"
@@ -69,47 +72,89 @@
             mustache-template="foo"
             >
 
-            <div id="content">Start</div>
+        <div id="content">Loading</div>
 
-    <template id="foo">
-        <p>{{{html_content}}} </p>
-      </template>
-  </section>
-
-  <section class="page-section cta" hx-get="https://cp2.feeed.com/test.html"  hx-trigger="load"></section>
-
-  <footer class="footer text-faded text-center py-5">
-    <div class="container">
-      <p class="m-0 small">Copyright &copy; Your Website <span class="cyear"
-          _="on load make a Date then put it.getFullYear() into me then log it.getFullYear()">2021</span></p>
-    </div>
-  </footer>
+        <template id="foo">
+          {{{html_content}}}
+        </template>
+      </div>
 
 
-  <!-- Bootstrap core JS-->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-  <!-- Core theme JS-->
-  <script src="js/scripts.js"></script>
-  <!-- Font Awesome icons (free version)-->
-  <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" crossorigin="anonymous"></script>
+      <footer>
+        <div class="grid">
+        <div>
+          <p>Jersey Post
+          <br>
+          Postal Headquarters
+          <br>
+          JERSEY
+          <br>
+          JE1 1AA</p>
+          <ul >
+            <li>
+                <a href="https://www.facebook.com/jerseypost/" target="_blank" style="margin-right:8px;font-size:24px;"><i class="fa fa-facebook"></i></a>
+                <a href="https://twitter.com/jsypost" target="_blank" style="margin-right:8px;font-size:24px;"><i class="fa fa-twitter"></i></a>
+                <a href="https://www.linkedin.com/company/jersey-post" target="_blank" style="margin-right:8px;font-size:24px;"><i class="fa fa-linkedin"></i></a>
+                <a href="https://www.instagram.com/jsypost/" target="_blank" style="margin-right:8px;font-size:24px;"><i class="fa fa-instagram"></i></a>
+                <a href="https://www.youtube.com/user/JerseyPost" target="_blank" style="font-size:24px;"><i class="fa fa-youtube"></i></a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <ul>
+            <li class="jp-li-title">Jersey Post</li>
+            <li><a href="/about-us/">About Us</a></li>
+            <li><a href="/about-us/contact-us/">Contact Us</a></li>
+            <li><a href="/about-us/annual-report/">Annual Report</a></li>
+            <li><a href="/about-us/careers/">Careers</a></li>
+            <li><a href="/about-us/news/">News</a></li>
+            <li><a href="/about-us/our-board/">Our Board</a></li>
+            <li><a href="/about-us/our-directors/">Our Directors</a></li>
+        </ul>
+        
+        </div>
+        <div>
+          <ul>
+            <li class="jp-li-title">&nbsp;</li>
+                <li><a href="/about-us/privacy-and-website-policy/">Privacy and Website Policy</a></li>
+                <li><a href="/about-us/data-protection/">Data Protection</a></li>
+                <li><a href="/about-us/terms/">Terms and Conditions</a></li>
+                <li><a href="/about-us/website-accessibility/">Website Accessibility</a></li>
+          </ul>
+        </div>
+        </div> <!-- grid -->
+        <div class="copyright">
+          <p>Copyright © Jersey Post 2022. All rights reserved.</p>
+        </div>
 
-  <script>
-    //var COCKPITAPIURL="https://phpstack-676167-2221902.cloudwaysapps.com/cockpit/api/"
-    var COCKPITAPIURL = "https://cp2.feeed.com/cockpit-core/api"
-    //var COCKPITTOKEN = "API-5d68fdce4797f108f759f56c765dde7b03ce13e3"
-    var COCKPITTOKEN = "USR-7d349ef9839e7d86f052205eb77fea61ae8a2b1a";
+      </footer>
+    </main>
 
+    <script>
+      //var COCKPITAPIURL="https://phpstack-676167-2221902.cloudwaysapps.com/cockpit/api/"
+      var COCKPITAPIURL = "https://cp2.feeed.com/cockpit-core/api"
+      //var COCKPITTOKEN = "API-5d68fdce4797f108f759f56c765dde7b03ce13e3"
+      var COCKPITTOKEN = "USR-7d349ef9839e7d86f052205eb77fea61ae8a2b1a";
+  
+  
+      document.body.addEventListener('htmx:configRequest', function(evt) {
+          //alert(evt.detail.path);
+          if (!evt.detail.path.startsWith('http')) {
+              evt.detail.path = COCKPITAPIURL+evt.detail.path
+          }
+          evt.detail.headers['api-key'] = COCKPITTOKEN;
+          //evt.detail.headers['Cockpit-Token'] = COCKPITTOKEN;
+      });
+    </script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 
-    document.body.addEventListener('htmx:configRequest', function(evt) {
-        //alert(evt.detail.path);
-        if (!evt.detail.path.startsWith('http')) {
-            evt.detail.path = COCKPITAPIURL+evt.detail.path
-        }
-        evt.detail.headers['api-key'] = COCKPITTOKEN;
-        //evt.detail.headers['Cockpit-Token'] = COCKPITTOKEN;
-    });
-  </script>
+    <script src="https://unpkg.com/hyperscript.org@0.9.5"></script>
 
-</body>
-
+    <script src="https://unpkg.com/htmx.org@1.8.0" integrity="sha384-cZuAZ+ZbwkNRnrKi05G/fjBX+azI9DNOkNYysZ0I/X5ZFgsmMiBXgDZof30F5ofc" crossorigin="anonymous"></script>
+  
+    <script src="https://unpkg.com/htmx.org/dist/ext/client-side-templates.js"></script>
+    <script src="https://unpkg.com/mustache@latest"></script>
+  
+  </body>
 </html>
