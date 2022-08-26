@@ -33,6 +33,14 @@
       scrollToLoadSelector: ''
   };
 
+  var slug = "";
+  const params = new URLSearchParams(window.location.search)
+  if (params.has('slug')) {
+    slug = params.get('slug')
+  } else {
+    slug = "TermsAndConditions1";
+  }
+
   try {
       Typekit.load({
           active: function () {
@@ -47,7 +55,7 @@
 </script>
   <body>
 
-    <main class="container">
+    <header class="jp-header">
       <nav>
         <ul>
           <li>
@@ -57,27 +65,43 @@
             </a>
           </li>
         </ul>
-        <!--<ul>
-          <li><a href="#">Link</a></li>
-          <li><a href="#">Link</a></li>
+        <ul>
+          <li><a href="https://www.jerseypost.com/">Jersey Post Home</a></li>
+          <!--
+            <li><a href="#">Link</a></li>
           <li><a href="#" role="button">Button</a></li>
-        </ul>-->
+          -->
+        </ul>
       </nav>
+    </header>
   
-      <div class="jp-content"
-            hx-get="/content/item/TermsAndConditions1" 
+     
+
+        <main class="container"
+            hx-get="/content/item/{{slug}}" 
             hx-trigger="load"
             hx-ext="client-side-templates"
             hx-target="#content"
-            mustache-template="foo"
+            mustache-template="htmlContentTemplate"
             >
 
-        <div id="content">Loading</div>
+        <div id="content">
+          <div class="htmx-indicator container">
+            <img src="assets/img/jploadingspinner.gif">
+          </div>
+        </div>
 
-        <template id="foo">
-          {{{html_content}}}
-        </template>
-      </div>
+        <template id="htmlContentTemplate">
+          <h1>{{title}}</h1>
+          <div>
+            {{{html_content}}}
+          </div>
+        </template> 
+        
+        
+      </main>
+
+    
 
 
       <footer>
@@ -128,7 +152,7 @@
         </div>
 
       </footer>
-    </main>
+
 
     <script>
       //var COCKPITAPIURL="https://phpstack-676167-2221902.cloudwaysapps.com/cockpit/api/"
@@ -136,12 +160,17 @@
       //var COCKPITTOKEN = "API-5d68fdce4797f108f759f56c765dde7b03ce13e3"
       var COCKPITTOKEN = "USR-7d349ef9839e7d86f052205eb77fea61ae8a2b1a";
   
-  
+      /**
+       * Supports prefixing all HTMX requests with base Cockpit URL (if http* not already specified)
+       * Also replaces {{slug}} with value of querystring param '?slug='
+       * Also popluates the api-key
+       */
       document.body.addEventListener('htmx:configRequest', function(evt) {
           //alert(evt.detail.path);
           if (!evt.detail.path.startsWith('http')) {
               evt.detail.path = COCKPITAPIURL+evt.detail.path
           }
+          evt.detail.path = evt.detail.path.replace("{{slug}}",slug);
           evt.detail.headers['api-key'] = COCKPITTOKEN;
           //evt.detail.headers['Cockpit-Token'] = COCKPITTOKEN;
       });
@@ -154,7 +183,8 @@
     <script src="https://unpkg.com/htmx.org@1.8.0" integrity="sha384-cZuAZ+ZbwkNRnrKi05G/fjBX+azI9DNOkNYysZ0I/X5ZFgsmMiBXgDZof30F5ofc" crossorigin="anonymous"></script>
   
     <script src="https://unpkg.com/htmx.org/dist/ext/client-side-templates.js"></script>
-    <script src="https://unpkg.com/mustache@latest"></script>
+    <<script src="https://unpkg.com/mustache@latest"></script>
+    <!--<script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>-->
   
   </body>
 </html>
