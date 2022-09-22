@@ -32,13 +32,14 @@
       fontLoadState: 1,
       scrollToLoadSelector: ''
   };
+  
 
   var slug = "";
   const params = new URLSearchParams(window.location.search)
   if (params.has('slug')) {
     slug = params.get('slug')
   } else {
-    slug = "TermsAndConditions1";
+    slug = "termsandconditions1";
   }
 
   try {
@@ -54,31 +55,41 @@
   } catch (e) { }
 </script>
   <body>
+    <template id="htmlSimpleTemplate">
+      <div>
+        {{{html_content}}}
+      </div>
+    </template> 
 
-    <header class="jp-header">
-      <nav>
-        <ul>
-          <li>
-            <a href="#">
-    
-              <img class="jp-navbar-logo" src="https://www.jerseypost.com/public/img/jpukraine.svg" alt="Jersey Post Logo" >            
-            </a>
-          </li>
-        </ul>
-        <ul>
-          <li><a href="https://www.jerseypost.com/">Jersey Post Home</a></li>
-          <!--
-            <li><a href="#">Link</a></li>
-          <li><a href="#" role="button">Button</a></li>
-          -->
-        </ul>
-      </nav>
+    <!--<header class="jp-header"
+      hx-get="/content/item/TermsPageHeader" 
+      hx-trigger="load"
+      hx-ext="client-side-templates"
+      mustache-template="htmlHeaderTemplate"
+    >-->
+    <header class="jp-header"
+    hx-get="/singletons/get/termspageheader" 
+    hx-trigger="load"
+    hx-ext="client-side-templates"
+    mustache-template="htmlSimpleTemplate"
+  >
+
+
+
     </header>
   
      
 
-        <main class="container"
+        <!--<main class="container"
             hx-get="/content/item/{{slug}}" 
+            hx-trigger="load"
+            hx-ext="client-side-templates"
+            hx-target="#content"
+            mustache-template="htmlContentTemplate"
+            >-->
+
+        <main class="container"
+            hx-get="/singletons/get/{{slug}}" 
             hx-trigger="load"
             hx-ext="client-side-templates"
             hx-target="#content"
@@ -104,7 +115,15 @@
     
 
 
-      <footer>
+      <footer hx-get="/singletons/get/termspagefooter" 
+        hx-trigger="load"
+        hx-ext="client-side-templates"
+        mustache-template="htmlSimpleTemplate"
+      >
+  
+
+
+        <!--
         <div class="grid">
         <div>
           <p>Jersey Post
@@ -146,19 +165,22 @@
                 <li><a href="/about-us/website-accessibility/">Website Accessibility</a></li>
           </ul>
         </div>
-        </div> <!-- grid -->
+        </div> 
         <div class="copyright">
           <p>Copyright © Jersey Post 2022. All rights reserved.</p>
         </div>
+      -->
 
       </footer>
 
 
     <script>
       //var COCKPITAPIURL="https://phpstack-676167-2221902.cloudwaysapps.com/cockpit/api/"
-      var COCKPITAPIURL = "https://cp2.feeed.com/cockpit-core/api"
+      ///var COCKPITAPIURL = "https://cp2.feeed.com/cockpit-core/api"
+      var COCKPITAPIURL = "https://cp2.feeed.com/cockpit-next/api"
       //var COCKPITTOKEN = "API-5d68fdce4797f108f759f56c765dde7b03ce13e3"
-      var COCKPITTOKEN = "USR-7d349ef9839e7d86f052205eb77fea61ae8a2b1a";
+      ///var COCKPITTOKEN = "USR-7d349ef9839e7d86f052205eb77fea61ae8a2b1a";
+      var COCKPITTOKEN = "1849b1e9339a346ec7804f5a5dc0dd"
   
       /**
        * Supports prefixing all HTMX requests with base Cockpit URL (if http* not already specified)
@@ -171,8 +193,8 @@
               evt.detail.path = COCKPITAPIURL+evt.detail.path
           }
           evt.detail.path = evt.detail.path.replace("{{slug}}",slug);
-          evt.detail.headers['api-key'] = COCKPITTOKEN;
-          //evt.detail.headers['Cockpit-Token'] = COCKPITTOKEN;
+          evt.detail.headers['api-key'] = COCKPITTOKEN; // for Cockpit V2
+          evt.detail.headers['Cockpit-Token'] = COCKPITTOKEN; // for Cockpit Next
       });
     </script>
     
@@ -183,8 +205,10 @@
     <script src="https://unpkg.com/htmx.org@1.8.0" integrity="sha384-cZuAZ+ZbwkNRnrKi05G/fjBX+azI9DNOkNYysZ0I/X5ZFgsmMiBXgDZof30F5ofc" crossorigin="anonymous"></script>
   
     <script src="https://unpkg.com/htmx.org/dist/ext/client-side-templates.js"></script>
-    <<script src="https://unpkg.com/mustache@latest"></script>
+    <script src="https://unpkg.com/mustache@latest"></script>
     <!--<script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>-->
   
   </body>
 </html>
+
+
