@@ -134,6 +134,9 @@
 </script>
 
 <script>
+    // We will need to also enable Chrome kiosk print mode (--kiosk-printing)
+    // to avoid the chrome print dialog being displayed
+    // see https://github.com/crabbly/Print.js/issues/517
     function printPDF(url) {
         fetch(url).then(function (response) {
             response.blob().then(function (blob) {
@@ -143,8 +146,8 @@
                     //Remove the data:application/pdf;base64,
                     printJS({
                         printable: reader.result.substring(28),
-                        type: 'pdf',
-                        base64: true
+                        type: 'pdf'//,
+                        //base64: true
                     });
                 };
                 reader.readAsDataURL(blob);
@@ -186,9 +189,9 @@
 
   <main class="container">
 
-
-        <button id="print" _="on click call printPDF('https://cp2.feeed.com/cockpit-next/storage/uploads/2022/10/06/attachment-1_uid_633f0207ec67e.pdf')" >Print PDF</button>
-
+    <h1>Basic PDF Label Printing PoC</h1>
+    <p>This button will print a static PDF stored in Coclpit CMS</p>
+    <button id="print" _="on click call printPDF('https://cp2.feeed.com/cockpit-next/storage/uploads/2022/10/06/attachment-1_uid_633f0207ec67e.pdf')" >Print Label</button>
     
   </main>
 
