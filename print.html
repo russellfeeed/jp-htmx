@@ -138,7 +138,13 @@
     // to avoid the chrome print dialog being displayed
     // see https://github.com/crabbly/Print.js/issues/517
     function printPDF(url) {
-        fetch(url).then(function (response) {
+        fetch(url
+        {headers: {
+            // the content type header value is usually auto-set
+            // depending on the request body
+            "Cockpit-Token": window.COCKPITTOKEN
+        }},
+        ).then(function (response) {
             response.blob().then(function (blob) {
                 var reader = new FileReader();
                 reader.onload = function () {
@@ -155,6 +161,8 @@
         });
     } // printPDF
 </script>
+
+
 
 <body>
   <template id="htmlSimpleTemplate">
@@ -198,13 +206,15 @@
         <li>CMS / Test PDF Labels hosted at https://cp2.feeed.com/cockpit-next/assetsmanager</li>
     </ul>
     <p>Commiting and pushing to the Git repo will trigger a Git Action and will deploy to Azure</p>
-    <input id="pdfname" 
-           placeholder="Enter PDF filename (see Cockpit CMS)" 
-           value="2022/10/06/attachment-1_uid_633f0207ec67e.pdf"
+    <!-- value="2022/10/06/attachment-1_uid_633f0207ec67e.pdf" -->
+    <input id="assetid" 
+           placeholder="Enter Asset ID (see Cockpit CMS)" 
+           value="633f0207ec67e"
            _="on keyup put `Print ${my.value}` into #print"
            >
+           <!-- https://cp2.feeed.com/cockpit-next/storage/uploads/${#assetid.value} -->
     <button id="print" _="on click 
-    call printPDF(`https://cp2.feeed.com/cockpit-next/storage/uploads/${#pdfname.value}`)" >Print Label</button>
+    call printPDF(`/assets/${#assetid.value}`)" >Print Label</button>
     
   </main>
 
