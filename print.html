@@ -198,7 +198,11 @@
         <li>CMS / Test PDF Labels hosted at https://cp2.feeed.com/cockpit-next/assetsmanager</li>
     </ul>
     <p>Commiting and pushing to the Git repo will trigger a Git Action and will deploy to Azure</p>
-    <input id="pdfname" placeholder="Enter PDF filename (see Cockpit CMS)" value="2022/10/06/attachment-1_uid_633f0207ec67e.pdf">
+    <input id="pdfname" 
+           placeholder="Enter PDF filename (see Cockpit CMS)" 
+           value="2022/10/06/attachment-1_uid_633f0207ec67e.pdf"
+           _="on keyup put `Print ${my.value}` into #print"
+           >
     <button id="print" _="on click 
     call printPDF(`https://cp2.feeed.com/cockpit-next/storage/uploads/${#pdfname.value}`)" >Print Label</button>
     
