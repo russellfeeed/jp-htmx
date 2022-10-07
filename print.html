@@ -150,7 +150,9 @@
             "Cockpit-Token": window.COCKPITTOKEN
         }},
         ).then(function (response) {
+            console.log(response);
             response.blob().then(function (blob) {
+                
                 var reader = new FileReader();
                 reader.onload = function () {
 
@@ -158,7 +160,7 @@
                     printJS({
                         printable: reader.result.substring(28),
                         type: 'pdf',
-                        base64: true
+                        base64: false
                     });
                 };
                 reader.readAsDataURL(blob);
