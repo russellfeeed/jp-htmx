@@ -138,7 +138,7 @@
     // to avoid the chrome print dialog being displayed
     // see https://github.com/crabbly/Print.js/issues/517
     function printPDF(url) {
-        fetch(url
+        fetch(url+"?token="+window.COCKPITTOKEN,
         {headers: {
             // the content type header value is usually auto-set
             // depending on the request body
@@ -207,14 +207,15 @@
     </ul>
     <p>Commiting and pushing to the Git repo will trigger a Git Action and will deploy to Azure</p>
     <!-- value="2022/10/06/attachment-1_uid_633f0207ec67e.pdf" -->
-    <input id="assetid" 
-           placeholder="Enter Asset ID (see Cockpit CMS)" 
-           value="633f0207ec67e"
+    <input id="pathtoasset" 
+           placeholder="Enter Path to Asset (see Cockpit CMS)" 
+           value="2022/10/06/attachment-1_uid_633f0207ec67e.pdf"
            _="on keyup put `Print ${my.value}` into #print"
            >
+           <small>(Go into Cockpit > Assets and copy the link)</small>
            <!-- https://cp2.feeed.com/cockpit-next/storage/uploads/${#assetid.value} -->
     <button id="print" _="on click 
-    call printPDF(`/assets/${#assetid.value}`)" >Print Label</button>
+    call printPDF(`https://cp2.feeed.com/cockpit-next/storage/uploads/${#pathtoasset.value}`)" >Print Label</button>
     
   </main>
 
