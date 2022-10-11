@@ -168,8 +168,6 @@
     <div class="container" hx-get="/collections/get/ratecardTerms?filter[slug]={{slug}}" hx-trigger="load"
       hx-ext="client-side-templates" hx-target="#content" mustache-template="CollectionHtmlContentTemplate">
 
-
-
       <div id="content">
         <div class="htmx-indicator container">
           <img src="assets/img/jploadingspinner.gif">
@@ -186,21 +184,6 @@
 
     </div>
 
-
-
-    <div id="parentcontent" class="container" hx-get="/collections/get/ratecardTerms" hx-include="[name='filter[_id]']"
-      hx-trigger="load" hx-ext="client-side-templates" mustache-template="CollectionHtmlContentTemplateNoTitle">
-      <div class="htmx-indicator container">
-        <img src="assets/img/jploadingspinner.gif">
-      </div>
-
-      <template id="CollectionHtmlContentTemplateNoTitle">
-        <input type="hidden" name="filter[_id]" value="{{entries.0.parentterms._id}}">
-        <div>
-          {{{entries.0.html_content}}}
-        </div>
-      </template>
-    </div>
   </main>
 
 
