@@ -138,16 +138,17 @@
     // to avoid the chrome print dialog being displayed
     // see https://github.com/crabbly/Print.js/issues/517
     function printPDF(url) {
-        if (url.includes("?")) {
+        /*if (url.includes("?")) {
             url=url+"&token="+window.COCKPITTOKEN;
         } else {
             url=url+"?token="+window.COCKPITTOKEN;
         }
+        */
         fetch(url,
         {headers: {
             // the content type header value is usually auto-set
             // depending on the request body
-            "Cockpit-Token": window.COCKPITTOKEN
+            //"Cockpit-Token": window.COCKPITTOKEN
         }},
         ).then(function (response) {
             console.log(response);
@@ -210,7 +211,8 @@
     <ul>
         <li>Git Repo: https://github.com/russellfeeed/jp-htmx.git</li>
         <li>FE Hosted at https://jolly-sky-09bb6c203.1.azurestaticapps.net/print.html</li>
-        <li>CMS / Test PDF Labels hosted at https://cp2.feeed.com/cockpit-next/assetsmanager</li>
+        <li style="text-decoration: line-through;">CMS / Test PDF Labels hosted at https://cp2.feeed.com/cockpit-next/assetsmanager</li>
+        <li>Test PDF Labels retrieved via https://stagingpostage.tpalpha.io/labels/1ed48834-8f94-6068-b2c6-0242ac100702</li>
     </ul>
     <p>Commiting and pushing to the Git repo will trigger a Git Action and will deploy to Azure</p>
     <!-- value="2022/10/06/attachment-1_uid_633f0207ec67e.pdf" -->
