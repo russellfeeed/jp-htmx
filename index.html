@@ -145,9 +145,11 @@
       hx-ext="client-side-templates"
       mustache-template="htmlHeaderTemplate"
     >-->
-  <header class="jp-header" hx-get="/singletons/get/termspageheader" hx-trigger="load" hx-ext="client-side-templates"
-    mustache-template="htmlSimpleTemplate">
+  <!--<header class="jp-header" hx-get="/singletons/get/termspageheader" hx-trigger="load" hx-ext="client-side-templates"
+    mustache-template="htmlSimpleTemplate">-->
 
+    <header class="jp-header" hx-get="/collections/get/htmlsnippets?filter[slug]=terms-page-header" hx-trigger="load" hx-ext="client-side-templates"
+    mustache-template="htmlSimpleTemplate">
 
 
   </header>
@@ -197,10 +199,12 @@
   <script>
     //var COCKPITAPIURL="https://phpstack-676167-2221902.cloudwaysapps.com/cockpit/api/"
     ///var COCKPITAPIURL = "https://cp2.feeed.com/cockpit-core/api"
-    var COCKPITAPIURL = "https://cp2.feeed.com/cockpit-next/api"
+    //var COCKPITAPIURL = "https://cp2.feeed.com/cockpit-next/api";
+    var COCKPITAPIURL = "http://20.68.233.22/cockpit-next";
     //var COCKPITTOKEN = "API-5d68fdce4797f108f759f56c765dde7b03ce13e3"
     ///var COCKPITTOKEN = "USR-7d349ef9839e7d86f052205eb77fea61ae8a2b1a";
-    var COCKPITTOKEN = "1849b1e9339a346ec7804f5a5dc0dd"
+    //var COCKPITTOKEN = "1849b1e9339a346ec7804f5a5dc0dd";
+    var COCKPITTOKEN = "8f9b23c1b5b52ea4aa2dce60a7c5bb"; // http://20.68.233.22/cockpit-next
 
     /**
      * Supports prefixing all HTMX requests with base Cockpit URL (if http* not already specified)
