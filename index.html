@@ -191,7 +191,11 @@
 
 
 
-  <footer hx-get="/singletons/get/termspagefooter" hx-trigger="load" hx-ext="client-side-templates"
+  <!--<footer hx-get="/singletons/get/termspagefooter" hx-trigger="load" hx-ext="client-side-templates"
+    mustache-template="htmlSimpleTemplate">
+  </footer>-->
+
+  <footer hx-get="/collections/get/htmlsnippets?filter[slug]=terms-page-footer" hx-trigger="load" hx-ext="client-side-templates"
     mustache-template="htmlSimpleTemplate">
   </footer>
 
